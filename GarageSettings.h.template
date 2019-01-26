@@ -1,0 +1,37 @@
+#define WIFI_SSID "Your_Wifi_SSID"
+#define WIFI_PASSWORD  "Your_Wifi_password"
+#define MQTT_SERVER "Your_MQTT_Server"
+#define MQTT_SERVERPORT Your_MQTT_Port
+#define MQTT_USERNAME "Your_MQTT_Username"
+#define MQTT_PASSWORD "Your_MQTT_Password"
+#define MQTT_CLIENTID "Your_MQTT_clientid"
+#define FIRMWARE_UPDATE_USERNAME "Username_for_OTA_firmware_update"
+#define FIRMWARE_UPDATE_PASSWORD "Password_for_OTA_firmware_update"
+
+// To use static IP configuration, you need to uncomment the following 3 lines, and set the right values
+//#define STATIC_IP "Your_static_IP"
+//#define STATIC_GATEWAY "Your_Gateway_IP"
+//#define STATIC_SUBNET "Your_Subnet"
+// Optionally, you can also set a DNS server
+//#define STATIC_DNS1 "Your_dns_server"
+//#define STATIC_DNS2 "Your_second_dns_server"
+
+// Threshold for the distance sensor (in centimeter) lower = car is in garage, higher or equal = car is not in garage
+#define CAR_SENSOR_DISTANCE_THESHOLD 1000
+
+// Time between status reports in ms (if set to 0 or lower, status reports are not sent)
+#define STATUS_REPORT_INTERVAL 1000
+
+#define MQTT_DOOR_STATUS_TOPIC "stat/home/garagedoor/doorStatus"
+#define MQTT_DOOR_COMMAND_TOPIC "cmnd/home/garagedoor/trigger"
+#define MQTT_CAR_STATUS_TOPIC "stat/home/garagedoor/carStatus"
+#define MQTT_STATUS_TOPIC "stat/home/garagedoor/status"
+
+#define HOSTNAME "GarageDoor"
+#define FIRMWARE_UPDATE_PATH "/firmware"
+
+#define DOOR_SENSOR_CLOSED 13
+#define DOOR_SENSOR_OPENED 12
+#define CAR_SENSOR_TRIGGER 14
+#define CAR_SENSOR_ECHO 4
+#define DOOR_TRIGGER 2
