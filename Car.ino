@@ -35,10 +35,10 @@ void carLoop() {
   digitalWrite(CAR_SENSOR_TRIGGER, LOW);
   delayMicroseconds(2);
   digitalWrite(CAR_SENSOR_TRIGGER, HIGH);
-  delayMicroseconds(10);
+  delay(100);
   digitalWrite(CAR_SENSOR_TRIGGER, LOW);
   float duration = pulseIn(CAR_SENSOR_ECHO, HIGH);
-  float distance = (duration / 2) * 0.0343;
+  float distance = (duration/2) / 29.1;
 
   if (carInGarage && distance >= CAR_SENSOR_DISTANCE_THESHOLD) {
     carInGarage = false;

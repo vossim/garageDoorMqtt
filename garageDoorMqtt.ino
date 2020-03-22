@@ -38,6 +38,10 @@ char* doorStatus;
 
 bool carInGarage = false;
 
+bool doorTriggered = false;
+long doorTriggerTime = 0;
+long doorTriggerInterval = DOOR_TRIGGER_INTERVAL;
+
 ESP8266WebServer httpServer(80);
 ESP8266HTTPUpdateServer httpUpdater;
 WiFiClient espClient;

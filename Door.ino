@@ -26,7 +26,7 @@ THE SOFTWARE.
 
 void doorSetup() {
   pinMode(DOOR_TRIGGER, OUTPUT);
-  digitalWrite(DOOR_TRIGGER, 0);
+  digitalWrite(DOOR_TRIGGER, 1);
   pinMode(DOOR_SENSOR_OPENED, INPUT);
   pinMode(DOOR_SENSOR_CLOSED, INPUT);
   doorStatus = DOOR_STATUS_INIT;
@@ -58,8 +58,16 @@ void doorLoop() {
     doorStatus = newStatus;
     client.publish(MQTT_DOOR_STATUS_TOPIC, doorStatus);
   }
+
+  if (doorTriggered && (doorTriggerInterval > 0 && millis() - doorTriggerTime > doorTriggerInterval)) {
+    digitalWrite(DOOR_TRIGGER, 1);
+    doorTriggerTime = 0;
+    doorTriggered = false;
+  }
 }
 
 void doorTrigger() {
-  // TODO: Need to trigger the door here
+  doorTriggered = true;
+  doorTriggerTime = millis();
+  digitalWrite(DOOR_TRIGGER, 0);
 }

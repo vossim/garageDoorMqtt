@@ -5,7 +5,7 @@ Arduino based project, using an esp8266, to control a standard garage door opene
 An arduino project which aims to add a bit of smarts to a standard garage door opener. The final solution should detect the state the garage door is in (open/closed/opening/closing), trigger the door to open or close and detect if a car is present in the garage. All of the connectivity will go over MQTT.
 
 - [x] Garage door status
-- [ ] Garage door trigger
+- [x] Garage door trigger
 - [x] Car presence status
 - [ ] Secure the MQTT connection
 
